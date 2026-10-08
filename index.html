@@ -287,7 +287,41 @@ body.acct .tb{padding-top:12px}
 .chip2{padding:4px}
 .lo2{display:none}
 }
+.sh{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--g1);margin:26px 0 10px;text-align:center}
+.s6w{max-width:760px;margin:22px auto 0}
+.s6w .chips{justify-content:center}
+.gtb{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gh{font-size:13px;color:var(--mute);padding:10px 14px}
+.gr{display:grid;grid-template-columns:24px 1fr auto;gap:12px;padding:11px 14px;border-top:1px solid var(--line);align-items:center;font-size:15px;cursor:pointer}
+.gr input{width:18px;height:18px;accent-color:var(--g1)}.gr small{color:var(--mute)}
+.s6m{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.s6t{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font-weight:700;flex-wrap:wrap}
+.s6s{font-size:12px;background:linear-gradient(90deg,var(--g1),var(--g2));color:#fff;border-radius:999px;padding:5px 12px}
+.s6g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.s6c{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.s6c b{display:block;font-size:24px}.s6c span{font-size:12px;color:var(--mute)}
+.s6p{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-left:4px solid var(--g3);border-radius:12px;padding:10px 12px;margin-bottom:8px;animation:slide .4s ease both;font-size:14px}
+.s6p small{color:var(--mute)}
+.s6a{flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g3));color:#fff;display:grid;place-items:center;font-weight:800}
+@media(max-width:700px){.s6g{grid-template-columns:repeat(2,1fr)}}
+body.acct[data-view=crm] .v-crm,body.acct[data-view=outreach] .v-outreach{display:block!important;animation:rise .35s ease both}
+.cst{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.cst div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.cst b{display:block;font-size:22px}.cst span{font-size:12px;color:var(--mute)}
+.crf{display:grid;grid-template-columns:1fr 1.6fr 110px auto;gap:8px}
+.crf input,#om,.vw select,.kf input{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.kb2{display:grid;grid-template-columns:repeat(5,minmax(210px,1fr));gap:12px;overflow-x:auto;padding:14px 0 8px}
+.kcol{background:rgba(120,140,200,.08);border:1px solid var(--line);border-radius:14px;padding:10px;align-self:start}
+.kcol h3{margin:2px 4px 10px;font-size:15px;display:flex;justify-content:space-between}.kcol h3 span{color:var(--mute);font-weight:400}
+.kcol:nth-child(1){border-top:3px solid #38bdf8}.kcol:nth-child(2){border-top:3px solid #f59e0b}.kcol:nth-child(3){border-top:3px solid #a78bfa}.kcol:nth-child(4){border-top:3px solid #22d3a0}.kcol:nth-child(5){border-top:3px solid #fb7185}
+.kc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:14px}
+.kc small{display:block;color:var(--mute)}.kc p{margin:6px 0;font-size:13px}.kv{font-weight:700;color:#22d3a0}
+.kf{display:block;font-size:11px;color:var(--mute);margin-top:6px}.kf input{width:100%;padding:5px 8px;font-size:12px;margin-top:2px}
+.kbt{display:flex;gap:6px;margin-top:8px}.kbt button{flex:1;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;padding:5px;cursor:pointer;font:inherit;font-size:12px}
+.kbt button:hover{background:rgba(34,211,160,.15)}
+.ow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}.ow select{width:100%}
+#om{width:100%;min-height:130px;resize:vertical}
+@media(max-width:860px){.crf,.ow,.cst{grid-template-columns:1fr}.sb{overflow-x:auto}}
 </style>
+
+
 
 
 
@@ -295,7 +329,7 @@ body.acct .tb{padding-top:12px}
 <body>
 <div class="wrap">
 <header class="top"><a class="logo" href="#/" aria-label="Gigwren home"><span class="lg"><img src="data:image/jpeg;base64,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" alt=""></span><span class="rest">Gigwren</span></a><nav id="nav"></nav></header>
-<aside class="sb onlyacct" aria-label="Account menu"><div class="mk">G</div><span class="av" id="su1" hidden>G</span><b id="su2" hidden></b><small id="sp" hidden></small><button data-v="overview"><i data-i="dash"></i>Overview</button><button data-v="setup"><i data-i="setup"></i>Setup</button><button data-v="groups"><i data-i="groups"></i>Groups</button><button data-v="keywords"><i data-i="kw"></i>Keywords</button><button data-v="leads"><i data-i="leads"></i>Leads</button><button data-v="plan"><i data-i="plan"></i>Plan</button><div class="sp2"></div><button id="lo"><i data-i="out"></i>Log out</button></aside>
+<aside class="sb onlyacct" aria-label="Account menu"><div class="mk">G</div><span class="av" id="su1" hidden>G</span><b id="su2" hidden></b><small id="sp" hidden></small><button data-v="overview"><i data-i="dash"></i>Overview</button><button data-v="setup"><i data-i="setup"></i>Setup</button><button data-v="groups"><i data-i="groups"></i>Groups</button><button data-v="keywords"><i data-i="kw"></i>Keywords</button><button data-v="leads"><i data-i="leads"></i>Leads</button><button data-v="crm"><i data-i="crm"></i>CRM</button><button data-v="outreach"><i data-i="send"></i>Outreach</button><button data-v="plan"><i data-i="plan"></i>Plan</button><div class="sp2"></div><button id="lo"><i data-i="out"></i>Log out</button></aside>
 <main>
 <section data-page="home">
 <svg class="art" style="top:10px;right:-30px;opacity:.13" width="340" viewBox="0 0 200 160" aria-hidden="true"><path d="M20 70Q60 20 110 40Q150 20 170 50L195 44L173 64Q165 112 110 126Q60 136 40 100L4 112Q26 90 20 70Z" fill="#8a3ffc"/><circle cx="140" cy="58" r="5" fill="#fff"/></svg><svg class="art" style="bottom:-60px;left:-80px;opacity:.1" width="380" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#2f5bff" stroke-width="3"><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="90"/><path d="M100 100L170 40" stroke="#ff5fa2" stroke-width="5"/><circle cx="170" cy="40" r="7" fill="#ff5fa2" stroke="none"/></svg>
@@ -312,6 +346,14 @@ body.acct .tb{padding-top:12px}
 <div class="blk" id="demo"><h2 style="text-align:center">See it work, live</h2><p class="sub" style="text-align:center;margin-inline:auto">Watch a freelancer set up Gigwren and catch a lead.</p>
 <div class="lap"><div class="scr"><div class="dm"><div class="dl"><div class="dh">Gigwren</div><div class="dt">What do you do?</div><div class="dc"><span>Web designer</span><span>Developer</span><span>Video editor</span></div><div class="dt">Keyword</div><div class="dk" id="dk"></div><div class="dt">Groups</div><div class="dg"><span id="g1">Startup Founders Hub</span><span id="g2">Small Business Owners</span></div></div>
 <div class="dr"><div class="ds"><div><b id="dn">0</b> leads</div><div id="dst">Waiting</div></div><div id="df"></div></div></div></div><div class="base"></div></div></div>
+<div class="blk" id="s60"><h2 style="text-align:center">Set up in 60 seconds</h2><p class="sub" style="text-align:center;margin-inline:auto">Try the steps yourself. The groups and posts here are samples.</p>
+<div class="s6w"><div class="sh">Step 1 · Choose your profession</div><ul class="chips" id="s6p"></ul>
+<div class="sh">Step 2 · Select groups to monitor</div><div class="gtb"><div class="gh" id="s6h"></div><div id="s6g"></div></div>
+<div class="sh">Step 3 · Add keywords</div><div class="row"><input type="text" id="s6i" placeholder="Enter a keyword" aria-label="Keyword"><button class="btn" id="s6b">Add</button></div><ul class="chips" id="s6k" style="margin-top:12px;justify-content:flex-start"></ul>
+<div class="sh">Step 4 · Groups are checked for relevant posts</div>
+<div class="s6m"><div class="s6t"><span>Monitoring dashboard</span><span class="s6s" id="s6s">Monitoring in progress</span></div>
+<div class="s6g"><div class="s6c"><b id="m1">0</b><span>Leads found</span></div><div class="s6c"><b id="m2">0</b><span>Posts analyzed</span></div><div class="s6c"><b id="m3">0</b><span>Groups monitored</span></div><div class="s6c"><b id="m4">0</b><span>Keywords</span></div></div>
+<div id="mp"></div><p class="note" style="text-align:center">Scanning for more matches...</p></div></div></div>
 <div class="blk"><h2>Why freelancers use Gigwren</h2><p class="sub">The first good reply usually wins the job. Gigwren is built to get you there first, without hours of scrolling.</p>
 <div class="g3"><div class="fc"><h3>Be first</h3><p class="sub">New requests reach you while people are still waiting for answers, before the comments fill up.</p></div>
 <div class="fc"><h3>Stop scrolling</h3><p class="sub">Choose your groups once. Gigwren checks them for you and keeps every match in one list.</p></div>
@@ -333,7 +375,7 @@ body.acct .tb{padding-top:12px}
 <div class="card cta"><h2>Ready to find your next client?</h2><p class="sub">Pick a plan, pay securely, and start catching leads.</p><a class="btn" href="#/pricing">Choose a plan</a></div>
 </section>
 <section data-page="features"><h1 class="ph">Everything you need to find clients first</h1><p class="lead">From picking groups to following up, here is what Gigwren does for you.</p>
-<div class="fb"><div><h3>Keyword monitoring</h3><p class="sub">Track the exact words and phrases people use when they ask for help.</p></div><ul><li>Add keywords for your service</li><li>Matches are highlighted in each post</li><li>Works on every plan</li></ul></div><div class="fb"><div><h3>AI lead matching</h3><p class="sub">Find requests by meaning and intent, even without your exact words.</p></div><ul><li>Catches natural, indirect requests</li><li>Fewer missed opportunities</li><li>Included on Pro and DFY</li></ul></div><div class="fb"><div><h3>Group picker and finder</h3><p class="sub">Choose the communities worth watching.</p></div><ul><li>Search Facebook groups from inside Gigwren</li><li>Switch any group on or off</li><li>Start from suggestions for your profession</li></ul></div><div class="fb"><div><h3>Alerts where you already are</h3><p class="sub">Get told about new matches without keeping the app open.</p></div><ul><li>Email alerts on every plan</li><li>Telegram and Discord on Pro</li><li>Choose how often scans run</li></ul></div><div class="fb"><div><h3>A simple lead list</h3><p class="sub">See every match in one place and keep track of who you contacted.</p></div><ul><li>Counters for leads and posts checked</li><li>Mark leads as contacted</li><li>Open the original post to reply</li></ul></div><div class="fb"><div><h3>Done-for-you outreach</h3><p class="sub">On DFY, our team starts the conversations so you only handle the replies.</p></div><ul><li>20 outreach messages a month</li><li>We monitor the groups you choose</li><li>You take over once someone answers</li></ul></div>
+<div class="fb"><div><h3>Keyword monitoring</h3><p class="sub">Track the exact words and phrases people use when they ask for help.</p></div><ul><li>Add keywords for your service</li><li>Matches are highlighted in each post</li><li>Works on every plan</li></ul></div><div class="fb"><div><h3>AI lead matching</h3><p class="sub">Find requests by meaning and intent, even without your exact words.</p></div><ul><li>Catches natural, indirect requests</li><li>Fewer missed opportunities</li><li>Included on Pro and DFY</li></ul></div><div class="fb"><div><h3>Group picker and finder</h3><p class="sub">Choose the communities worth watching.</p></div><ul><li>Search Facebook groups from inside Gigwren</li><li>Switch any group on or off</li><li>Start from suggestions for your profession</li></ul></div><div class="fb"><div><h3>Alerts where you already are</h3><p class="sub">Get told about new matches without keeping the app open.</p></div><ul><li>Email alerts on every plan</li><li>Telegram and Discord on Pro</li><li>Choose how often scans run</li></ul></div><div class="fb"><div><h3>A simple lead list</h3><p class="sub">See every match in one place and keep track of who you contacted.</p></div><ul><li>Counters for leads and posts checked</li><li>Mark leads as contacted</li><li>Open the original post to reply</li></ul></div><div class="fb"><div><h3>Built-in CRM</h3><p class="sub">Keep every lead from first message to paid job.</p></div><ul><li>Pipeline from New to Won</li><li>Follow-up dates and notes</li><li>Add a lead from your matches in one click</li></ul></div><div class="fb"><div><h3>Outreach templates</h3><p class="sub">Reply faster with messages you can edit.</p></div><ul><li>Ready-made first reply, price and follow-up</li><li>Filled in with the lead and your service</li><li>Copy, paste and send it yourself</li></ul></div><div class="fb"><div><h3>Done-for-you outreach</h3><p class="sub">On DFY, our team starts the conversations so you only handle the replies.</p></div><ul><li>20 outreach messages a month</li><li>We monitor the groups you choose</li><li>You take over once someone answers</li></ul></div>
 <div class="card cta"><h2>Coming next</h2><p class="sub">Live monitoring of your real groups, saved accounts across devices, and payments.</p><a class="btn" href="#/pricing">Choose a plan</a></div></section>
 <section data-page="pricing"><svg class="art" style="top:0;right:-20px;opacity:.12" width="300" viewBox="0 0 200 160" aria-hidden="true" fill="#ff5fa2"><rect x="10" y="10" width="120" height="50" rx="16"/><path d="M30 60l-4 20 22-20z"/><rect x="70" y="80" width="120" height="50" rx="16" fill="#2f5bff"/><path d="M170 130l6 20-26-20z" fill="#2f5bff"/></svg><div class="tg"><span>Monthly</span><button id="bill" role="switch" aria-checked="false" aria-label="Bill yearly"></button><span>Yearly</span></div>
 <p class="note" id="pgate" style="text-align:center;font-weight:600"></p><h2 style="text-align:center">Simple pricing</h2><p class="sub" style="text-align:center">Pick a plan and pay securely. Cancel anytime.</p>
@@ -388,6 +430,14 @@ body.acct .tb{padding-top:12px}
 <p class="note">Sample posts are used here to show how matching works. Live monitoring of your real groups needs the Gigwren Chrome extension, which is the next piece to build.</p>
 <div id="leads" style="margin-top:16px"></div>
 </div>
+<div class="card vw v-crm" id="crm"><h2>Lead pipeline</h2><p class="sub">Add leads, move them through each stage and set follow-up dates. Your CRM is saved on this device.</p>
+<div class="crf"><input type="text" id="cn" placeholder="Lead name" aria-label="Lead name"><input type="text" id="cnote" placeholder="What do they need?" aria-label="Note"><input type="number" id="cv" placeholder="Value $" aria-label="Value" min="0"><button class="btn" id="cadd">Add lead</button></div>
+<div class="cst"><div><b id="cs1">0</b><span>Total leads</span></div><div><b id="cs2">$0</b><span>Open pipeline</span></div><div><b id="cs3">$0</b><span>Won</span></div></div>
+<div class="kb2" id="crmb"></div></div>
+<div class="card vw v-outreach" id="outr"><h2>Outreach messages</h2><p class="sub">Pick a lead and a template, edit the message, then copy it. Gigwren does not send messages for you, so paste it into your own message and send it yourself.</p>
+<div class="ow"><select id="ol" aria-label="Lead"></select><select id="ot" aria-label="Template"></select></div>
+<textarea id="om" aria-label="Message"></textarea>
+<div class="row"><button class="btn" id="oc">Copy message</button><button class="btn ghost" id="od">Mark as contacted</button></div><p class="note" id="onote"></p></div>
 <div class="card vw v-plan" id="pv"><h2>Your plan</h2><div id="pvb"></div></div>
 <div class="card up onlyacct vw v-overview"><h2>You are on early access</h2><p class="sub">Pro adds AI lead matching, 15 groups, unlimited keywords and Telegram and Discord alerts.</p><a class="btn" href="#/pricing">See plans</a></div>
 </section>
@@ -428,7 +478,7 @@ function renderKws(){var h="";S.kws.forEach(function(k,i){h+='<li><button class=
 function renderLeads(){
 var n=0,h="";S.leads.forEach(function(l,i){
 var t=esc(l.t);S.kws.forEach(function(k){if(k)t=t.replace(new RegExp("("+rx(esc(k))+")","ig"),"<mark>$1</mark>")});
-h+='<div class="post'+(S.done[i]?" done":"")+'"><div class="meta"><span>'+esc(l.g)+'</span><span>'+esc(l.w)+'</span></div>'+t+'<div class="row"><button class="btn ghost" data-d="'+i+'">'+(S.done[i]?"Contacted":"Mark as contacted")+'</button></div></div>'});
+h+='<div class="post'+(S.done[i]?" done":"")+'"><div class="meta"><span>'+esc(l.g)+'</span><span>'+esc(l.w)+'</span></div>'+t+'<div class="row"><button class="btn ghost" data-d="'+i+'">'+(S.done[i]?"Contacted":"Mark as contacted")+'</button><button class="btn ghost" data-crm="'+i+'">Add to CRM</button></div></div>'});
 $("leads").innerHTML=h||'<div class="empty">No leads yet. Run a scan to check your groups.</div>';
 var on=S.groups.filter(function(g){return S.on[g]}).length;
 $("s1").textContent=S.leads.length;$("s2").textContent=Object.keys(S.seen).length;$("s3").textContent=on;$("s4").textContent=S.kws.length;
@@ -463,7 +513,7 @@ if(p==="app"&&!plan()){window._gate="Choose a plan to open your dashboard.";loca
 if(p==="checkout"&&!u){location.hash="#/signup";return}
 if(p==="checkout"&&!want()){location.hash="#/pricing";return}
 document.body.classList.toggle("acct",p==="app"&&!!u);if(p==="app"&&u&&!document.body.getAttribute("data-view"))view("overview");document.querySelectorAll("[data-page]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-page")===p)});
-$("nav").innerHTML=u?'<a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a><a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});var o=$("out");if(o)o.onclick=function(){try{localStorage.removeItem("gwuser")}catch(e){}setTimeout(route,0)};
+$("nav").innerHTML=u?'<a href="#/features">Features</a><a href="#/pricing">Pricing</a>'+(plan()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});var o=$("out");if(o)o.onclick=function(){try{localStorage.removeItem("gwuser")}catch(e){}setTimeout(route,0)};
 $("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(window.acctRender)acctRender();window.scrollTo(0,0)}
 $("sp").innerHTML=Object.keys(PROF).map(function(k){return"<option>"+k+"</option>"}).join("");
 $("su").onsubmit=function(e){e.preventDefault();
@@ -490,6 +540,7 @@ $("wp").textContent=d===5?"Everything is set up. Keep scanning and reply fast.":
 document.addEventListener("click",function(e){var b=e.target.closest("[data-sc]");if(b){var t=document.getElementById(b.getAttribute("data-sc"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})}});
 $("wscan").onclick=function(){$("scan").click()};
 $("lo").onclick=function(){try{localStorage.removeItem("gwuser")}catch(e){}location.hash="#/";route()};
+var TEST_MODE=true;
 var PAY={plus:{m:"",y:""},pro:{m:"",y:""},dfy:{m:"",y:""}};
 var PLANS={plus:{n:"Plus",m:5,y:50,t:"7 days free, then ",f:["Monitor up to 5 groups","10 keywords in total","Email alerts for new matches","Daily and manual scans"]},pro:{n:"Pro",m:10,y:100,t:"",f:["Monitor up to 15 groups","Unlimited keywords","AI lead matching by intent","Telegram and Discord alerts","Hourly scans"]},dfy:{n:"DFY",m:20,y:200,t:"",f:["Everything in Pro","20 outreach messages a month","We monitor the groups you choose","You just handle the replies"]}};
 function plan(){try{return JSON.parse(localStorage.getItem("gwplan")||"null")}catch(e){return null}}
@@ -500,7 +551,7 @@ $("ckp").innerHTML=(P.t?esc(P.t):"")+"$"+amt+"<small> "+per+"</small>";
 $("ckf").innerHTML=P.f.map(function(x){return"<li>"+esc(x)+"</li>"}).join("");
 var link=PAY[w.plan][w.billing],b=$("ckb");
 if(link){b.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+esc(link)+'">Pay $'+amt+' securely</a><button class="btn ghost" id="paid">I have paid</button>';$("ckn2").textContent="After paying, tap I have paid to open your dashboard.";$("paid").onclick=function(){try{localStorage.setItem("gwplan",JSON.stringify({plan:w.plan,billing:w.billing,status:"paid-unverified"}))}catch(e){}location.hash="#/app"}}
-else{b.innerHTML='<a class="btn" href="mailto:'+OWNER+'?subject='+encodeURIComponent("Gigwren "+P.n+" plan")+'&body='+encodeURIComponent("I would like the "+P.n+" plan ("+(y?"yearly":"monthly")+").")+'">Reserve this plan</a>';$("ckn2").textContent="Online payment is being set up. Email us to reserve your plan."}}
+else{b.innerHTML='<a class="btn" href="mailto:'+OWNER+'?subject='+encodeURIComponent("Gigwren "+P.n+" plan")+'&body='+encodeURIComponent("I would like the "+P.n+" plan ("+(y?"yearly":"monthly")+").")+'">Reserve this plan</a>';$("ckn2").textContent="Online payment is being set up. Email us to reserve your plan.";if(TEST_MODE){b.insertAdjacentHTML("beforeend",'<button class="btn ghost" id="tm">Preview dashboard (test mode)</button>');$("tm").onclick=function(){try{localStorage.setItem("gwplan",JSON.stringify({plan:w.plan,billing:w.billing,status:"test"}))}catch(e){}location.hash="#/app"}}}}
 document.addEventListener("click",function(e){var b=e.target.closest("[data-plan]");if(!b)return;var w={plan:b.getAttribute("data-plan"),billing:$("bill").getAttribute("aria-checked")==="true"?"y":"m"};try{localStorage.setItem("gwwant",JSON.stringify(w))}catch(x){}location.hash=user()?"#/checkout":"#/signup"});
 (function(){if(window._d)return;window._d=1;
 var chips=document.querySelectorAll(".dc span"),T=[];
@@ -537,6 +588,72 @@ document.addEventListener("click",function(e){var b=e.target.closest("[data-v]")
 function lout(){try{localStorage.removeItem("gwuser")}catch(e){}location.hash="#/";route()}
 $("lo2").onclick=lout;
 $("tscan").onclick=function(){$("scan").click();view("leads")};
+
+(function(){
+var PN=["Web designer","Developer","Video editor","Copywriter","Graphic designer","Social media manager","Virtual assistant","Photographer","SEO specialist","Voice-over artist"];
+var KW={"Web designer":"web designer","Developer":"developer","Video editor":"video editor","Copywriter":"copywriter","Graphic designer":"logo designer","Social media manager":"social media manager","Virtual assistant":"virtual assistant","Photographer":"photographer","SEO specialist":"seo","Voice-over artist":"voice over"};
+var SEEN=["8 mins ago","1 hour ago","4 hours ago","2 days ago","6 days ago","1 week ago"];
+var TPL=["Can anyone recommend a {k}? Need someone this week.","Looking to hire a {k} for a small project, budget ready.","Does anybody know a reliable {k}? Please share.","Need a {k} urgently, DM me if you can help."];
+var WHO=["Alex M.","Tolu A.","Sam K.","Ngozi O.","Daniel P.","Amaka E."];
+var st={p:PN[0],g:[],on:{},k:[],leads:[],an:0};
+function q(i){return document.getElementById(i)}
+function ex(t){return t.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function pick(p){st.p=p;st.g=[p+"s Hiring Hub","Small Business Owners","Startup Founders Hub","Online Sellers Club","Local Business Network","Content Creators Circle"];st.on={};st.g.slice(0,3).forEach(function(g){st.on[g]=1});st.k=[KW[p]];st.leads=[];st.an=0;draw()}
+function draw(){
+q("s6p").innerHTML=PN.map(function(p){return'<li><button class="chip" data-s6p="'+p+'" aria-pressed="'+(p===st.p)+'">'+p+'</button></li>'}).join("");
+var n=Object.keys(st.on).filter(function(g){return st.on[g]}).length;
+q("s6h").textContent="Found "+st.g.length+" sample groups ("+n+" selected)";
+q("s6g").innerHTML=st.g.map(function(g,i){return'<label class="gr"><input type="checkbox" data-s6g="'+i+'"'+(st.on[g]?" checked":"")+'><span>'+ex(g)+'</span><small>'+SEEN[i]+'</small></label>'}).join("");
+q("s6k").innerHTML=st.k.map(function(k,i){return'<li><button class="chip" data-s6k="'+i+'" aria-label="Remove '+ex(k)+'">'+ex(k)+' <span class="x">×</span></button></li>'}).join("");
+stats()}
+function stats(){var n=Object.keys(st.on).filter(function(g){return st.on[g]}).length;
+q("m1").textContent=st.leads.length;q("m2").textContent=st.an;q("m3").textContent=n;q("m4").textContent=st.k.length;
+q("mp").innerHTML=st.leads.length?st.leads.map(function(l){return'<div class="s6p"><span class="s6a">'+l.w[0]+'</span><div><b>'+l.w+'</b><small> '+ex(l.g)+' · just now</small><div>'+l.t+'</div></div></div>'}).join(""):'<p class="note" style="text-align:center">No matches yet. Turn on a group and add a keyword.</p>'}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-s6p]");if(b){pick(b.getAttribute("data-s6p"));return}
+b=e.target.closest("[data-s6k]");if(b){st.k.splice(+b.getAttribute("data-s6k"),1);draw()}});
+document.addEventListener("change",function(e){var c=e.target.getAttribute&&e.target.getAttribute("data-s6g");if(c===null||c===undefined)return;st.on[st.g[+c]]=e.target.checked?1:0;draw()});
+q("s6b").onclick=function(){var v=q("s6i").value.trim().toLowerCase();if(v&&st.k.length<8&&st.k.indexOf(v)<0){st.k.push(v);draw()}q("s6i").value=""};
+q("s6i").onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();q("s6b").click()}};
+setInterval(function(){if(document.hidden||!document.querySelector('[data-page="home"].on'))return;
+var on=st.g.filter(function(g){return st.on[g]});if(!on.length||!st.k.length){q("s6s").textContent="Waiting for a group and keyword";return}
+q("s6s").textContent="Monitoring in progress";st.an+=3+Math.floor(Math.random()*7);
+if(Math.random()<.35){var k=st.k[Math.floor(Math.random()*st.k.length)],t=TPL[Math.floor(Math.random()*TPL.length)];
+st.leads.unshift({w:WHO[Math.floor(Math.random()*WHO.length)],g:on[Math.floor(Math.random()*on.length)],t:ex(t).replace("{k}","<mark>"+ex(k)+"</mark>")});if(st.leads.length>4)st.leads.pop()}
+stats()},1400);
+pick(PN[0])})();
+
+IC.crm=sv('<rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="10" rx="1"/><rect x="17" y="4" width="4" height="13" rx="1"/>');
+IC.send=sv('<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/>');
+document.querySelectorAll('[data-i="crm"],[data-i="send"]').forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]});
+VT.crm=["CRM","Track every lead from first message to paid job"];VT.outreach=["Outreach","Write and track your messages"];
+var STG=["New","Contacted","Replied","Won","Lost"];
+var TPLS=["Hi {name}, I saw your post and I can help with {service}. I would love to share a couple of ideas. When is a good time to chat?","Hi {name}, thanks for posting. I do {service} and can start this week. Pricing starts from $[price]. Want me to send a quick proposal?","Hi {name}, just following up on my earlier message about {service}. Are you still looking for help? Happy to answer any questions."];
+function cget(){try{return JSON.parse(localStorage.getItem("gwcrm")||"[]")}catch(e){return[]}}
+var CRM=cget();
+function cset(){try{localStorage.setItem("gwcrm",JSON.stringify(CRM))}catch(e){}}
+function crmAdd(o){CRM.unshift({name:o.name,note:o.note||"",src:o.src||"Manual",val:+o.val||0,st:0,fu:"",lc:""});cset();crmDraw()}
+function crmDraw(){
+var h="",open=0,won=0;
+STG.forEach(function(sn,si){var items=CRM.map(function(c,i){return[c,i]}).filter(function(x){return x[0].st===si});
+h+='<div class="kcol"><h3>'+sn+' <span>'+items.length+'</span></h3>'+items.map(function(x){var c=x[0],i=x[1];if(si<3)open+=c.val;if(si===3)won+=c.val;
+return'<div class="kc"><b>'+esc(c.name)+'</b><small>'+esc(c.src)+(c.lc?" · contacted "+esc(c.lc):"")+'</small>'+(c.note?'<p>'+esc(c.note)+'</p>':'')+(c.val?'<div class="kv">$'+c.val+'</div>':'')+'<label class="kf">Follow up <input type="date" data-fu="'+i+'" value="'+esc(c.fu)+'"></label><div class="kbt"><button data-mv="'+i+'|-1" aria-label="Move back">&lsaquo;</button><button data-mv="'+i+'|1" aria-label="Move forward">&rsaquo;</button><button data-rm="'+i+'">Delete</button></div></div>'}).join("")||'<p class="note">Empty</p>';h+='</div>'});
+$("crmb").innerHTML=h;$("cs1").textContent=CRM.length;$("cs2").textContent="$"+open;$("cs3").textContent="$"+won;
+var sel=$("ol"),cur=sel.value;sel.innerHTML=CRM.length?CRM.map(function(c,i){return'<option value="'+i+'">'+esc(c.name)+'</option>'}).join(""):'<option value="">Add a lead to the CRM first</option>';if(cur&&sel.querySelector('[value="'+cur+'"]'))sel.value=cur;ofill()}
+function ofill(){var c=CRM[+$("ol").value],u=user(),n=c?c.name.split(" ")[0]:"there";if(c&&/^Lead /.test(c.name))n="there";
+$("om").value=TPLS[+$("ot").value].replace("{name}",n).replace("{service}",(u&&u.prof?u.prof.toLowerCase():"your project"))}
+$("ot").innerHTML=["Quick reply","With price","Follow-up"].map(function(t,i){return'<option value="'+i+'">'+t+'</option>'}).join("");
+$("ot").onchange=ofill;$("ol").onchange=ofill;
+$("cadd").onclick=function(){var n=$("cn").value.trim();if(!n)return;crmAdd({name:n,note:$("cnote").value.trim(),val:$("cv").value});$("cn").value="";$("cnote").value="";$("cv").value=""};
+$("oc").onclick=function(){var t=$("om").value,m=$("onote");function ok(){m.textContent="Copied. Paste it in your message and send it yourself."}
+try{navigator.clipboard.writeText(t).then(ok,function(){$("om").select();document.execCommand("copy");ok()})}catch(e){$("om").select();try{document.execCommand("copy");ok()}catch(x){m.textContent="Select the text and copy it."}}};
+$("od").onclick=function(){var c=CRM[+$("ol").value];if(!c){$("onote").textContent="Pick a lead first.";return}if(c.st<1)c.st=1;c.lc=new Date().toISOString().slice(0,10);cset();crmDraw();$("onote").textContent="Marked as contacted and moved in your CRM."};
+document.addEventListener("click",function(e){var b=e.target.closest("[data-mv]");
+if(b){var p=b.getAttribute("data-mv").split("|"),c=CRM[+p[0]];c.st=Math.max(0,Math.min(4,c.st+ +p[1]));cset();crmDraw();return}
+b=e.target.closest("[data-rm]");if(b){CRM.splice(+b.getAttribute("data-rm"),1);cset();crmDraw();return}
+b=e.target.closest("[data-crm]");if(b){var l=S.leads[+b.getAttribute("data-crm")];if(!l)return;
+if(!CRM.some(function(c){return c.note===l.t&&c.src===l.g}))crmAdd({name:"Lead from "+l.g,note:l.t,src:l.g});b.textContent="Added to CRM";b.disabled=true}});
+document.addEventListener("change",function(e){var f=e.target.getAttribute&&e.target.getAttribute("data-fu");if(f===null||f===undefined)return;CRM[+f].fu=e.target.value;cset()});
+crmDraw();
 
 window.onhashchange=route;route();
 
