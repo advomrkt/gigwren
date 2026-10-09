@@ -383,7 +383,20 @@ select{color-scheme:dark;width:100%}
 body:not(.acct) select option,body:not(.acct) select optgroup{background:#0b1120;color:#f3f1ea}
 body.acct select option{background:#112521;color:#e8fff7}
 .sl{display:block;font-size:13px;color:var(--mute)}.sl select{margin-top:4px;font-size:16px}
+main{transition:opacity .22s ease,transform .22s ease}
+main.pt{opacity:0;transform:translateY(12px)}
+#veil{position:fixed;inset:0;z-index:999;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#17306b,#04060c 72%);opacity:0;pointer-events:none;transition:opacity .3s ease}
+#veil.on{opacity:1;pointer-events:all}
+#veil .vg{width:54px;height:54px;border-radius:50%;border:3px solid rgba(255,255,255,.18);border-top-color:#5b8cff;animation:spin .8s linear infinite}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#101a38;color:#fff;border:1px solid rgba(79,124,255,.55);padding:11px 18px;border-radius:999px;opacity:0;transition:opacity .3s,transform .3s;z-index:1000;pointer-events:none;font-size:15px;max-width:90vw}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:860px){body.acct #toast{bottom:84px}}
+.ap{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0}
+.ap.dn{opacity:.6}.ab{display:flex;gap:8px}.st{text-transform:capitalize;color:var(--mute)}
+@media(max-width:700px){.ab{width:100%}.ab .btn{flex:1}}
 </style>
+
+
 
 
 
@@ -455,6 +468,7 @@ body.acct select option{background:#112521;color:#e8fff7}
 <section data-page="checkout"><h1 class="ph" id="ckt">Checkout</h1><div class="ck"><div class="card"><h2 id="ckn">Plan</h2><div class="big" id="ckp"></div><ul class="chk2" id="ckf"></ul></div>
 <div class="card"><h2>Pay securely</h2><p class="sub">Pay by bank transfer, then tell us you have paid.</p><div class="row" id="ckb"></div><p class="note" id="ckn2"></p></div></div></section>
 <section data-page="pending"><h1 class="ph">Waiting for confirmation</h1><div class="card"><h2>Thank you</h2><p class="sub" id="pdt"></p><div class="row"><button class="btn" id="pchk">Check status</button><a class="btn ghost" id="pwa" target="_blank" rel="noopener" href="https://wa.me/2348119528993">Message us on WhatsApp</a><a class="btn ghost" href="#/">Back to home</a></div><p class="note" id="pdn"></p></div></section>
+<section data-page="admin"><h1 class="ph">Payments</h1><p class="sub">Confirm a payment only after you see the money in your bank app with the same amount and reference.</p><div class="row"><button class="btn ghost" id="adr">Refresh</button></div><div id="adl"></div></section>
 <section data-page="signup"><svg class="art" style="top:0;right:-30px;opacity:.12" width="260" viewBox="0 0 200 160" aria-hidden="true"><path d="M20 70Q60 20 110 40Q150 20 170 50L195 44L173 64Q165 112 110 126Q60 136 40 100L4 112Q26 90 20 70Z" fill="#8a3ffc"/><circle cx="140" cy="58" r="5" fill="#fff"/></svg><h2>Create your account</h2><p class="sub">Tell us a little about you. No password needed during early access.</p>
 <form id="su" class="card form"><input type="text" id="sn" placeholder="Your name" required aria-label="Name"><input type="text" id="se" placeholder="Email address" required aria-label="Email"><input type="password" id="spw" placeholder="Password (at least 6 characters)" autocomplete="new-password" aria-label="Password" required><label class="sl">Your profession<select id="sp" aria-label="Profession"></select></label><button class="btn" type="submit">Create account</button></form>
 <p class="note" id="serr" style="color:#ff8aa0"></p><div id="sdone" class="card" hidden><h2>You're in</h2><p class="sub">Your account is saved on this device. Send us your details so we can add you to the early access list.</p><div class="row"><a class="btn" id="smail" href="#" target="_blank" rel="noopener">Send my details on WhatsApp</a><a class="btn ghost" id="sgo" href="#/pricing">Choose a plan</a></div></div><div class="g3" style="margin-top:26px"><div class="fc"><h3>Save your setup</h3><p class="sub">Your groups and keywords are kept for next time.</p></div><div class="fc"><h3>Higher limits</h3><p class="sub">Pick the plan that fits how many groups you watch.</p></div><div class="fc"><h3>Early access price</h3><p class="sub">Early members get a discount for life when plans go live.</p></div></div></section>
@@ -514,6 +528,7 @@ body.acct select option{background:#112521;color:#e8fff7}
 </main><footer class="ft"><div><b>Gigwren</b><p class="sub">Find the conversations that turn into your next job.</p></div><div class="fl"><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a href="#/login">Log in</a><a href="#/signup">Sign up</a></div><p class="note">© 2026 Gigwren. Prototype in early access.</p></footer>
 </div>
 
+<div id="veil" aria-hidden="true"><div class="vg"></div></div><div id="toast" role="status" aria-live="polite"></div>
 <script>
 var PROF={
 "Web designer":{k:["web designer","website redesign","landing page"],g:["Small Business Owners","Startup Founders Hub"]},
@@ -578,25 +593,26 @@ var OWNER="samuelstephen4312@gmail.com";
 function user(){try{return JSON.parse(localStorage.getItem("gwuser")||"null")}catch(e){return null}}
 function route(){
 var p=(location.hash||"#/").slice(2)||"home",u=user();
-if(["home","features","pricing","checkout","pending","signup","login","app"].indexOf(p)<0)p="home";
+if(["home","features","pricing","checkout","pending","admin","signup","login","app"].indexOf(p)<0)p="home";
 
 if(p==="app"&&!u){location.hash="#/signup";return}
 if(p==="app"&&!active()){if(pend()){location.hash="#/pending";return}window._gate="Choose a plan to open your dashboard.";location.hash="#/pricing";return}
+if(p==="admin"&&!isOwner()){location.hash="#/";return}
 if(p==="pending"&&!user()){location.hash="#/signup";return}
 if(p==="pending"&&active()){location.hash="#/app";return}
 if(p==="pending"&&!pend()){location.hash="#/pricing";return}
 if(p==="checkout"&&!u){location.hash="#/signup";return}
 if(p==="checkout"&&!want()){location.hash="#/pricing";return}
 document.body.classList.toggle("acct",p==="app"&&!!u);if(p==="app"&&u&&!document.body.getAttribute("data-view"))view("overview");document.querySelectorAll("[data-page]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-page")===p)});
-$("nav").innerHTML=u?'<a href="#/">Home</a><a href="#/features">Features</a>'+(active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
-$("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(p==="pending")pd();if(window.acctRender)acctRender();window.scrollTo(0,0)}
+$("nav").innerHTML=u?'<a href="#/">Home</a><a href="#/features">Features</a>'+(active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+(isOwner()?'<a href="#/admin">Admin</a>':'')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
+$("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(p==="pending")pd();if(p==="admin")adDraw();if(window.acctRender)acctRender();window.scrollTo(0,0)}
 $("sp").innerHTML=Object.keys(PROF).map(function(k){return"<option>"+k+"</option>"}).join("");
 $("su").onsubmit=function(e){e.preventDefault();
 var u={name:$("sn").value.trim(),email:$("se").value.trim(),prof:$("sp").value};
 try{localStorage.setItem("gwuser",JSON.stringify(u))}catch(x){}
 S.prof=u.prof;PROF[u.prof].k.forEach(function(k){if(S.kws.indexOf(k)<0)S.kws.push(k)});PROF[u.prof].g.forEach(addGroup);all();
 $("smail").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hello, I just signed up on Gigwren.\nName: "+u.name+"\nEmail: "+u.email+"\nProfession: "+u.prof);
-if(want()){$("sgo").textContent="Continue to checkout";$("sgo").setAttribute("href","#/checkout")}$("su").hidden=true;$("sdone").hidden=false;route()};
+if(want()){$("sgo").textContent="Continue to checkout";$("sgo").setAttribute("href","#/checkout")}toast("Account created");$("su").hidden=true;$("sdone").hidden=false;route()};
 $("li").onsubmit=function(e){e.preventDefault();var u=user();
 if(u&&u.email.toLowerCase()===$("le").value.trim().toLowerCase()){location.hash="#/app"}else{$("lerr").textContent="No account found for that email on this device. Sign up first."}};
 $("bill").onclick=function(){var y=this.getAttribute("aria-checked")!=="true";this.setAttribute("aria-checked",y);document.querySelectorAll("[data-m]").forEach(function(e){e.textContent=e.getAttribute(y?"data-y":"data-m")})};
@@ -604,10 +620,10 @@ $("bill").onclick=function(){var y=this.getAttribute("aria-checked")!=="true";th
 window.acctRender=function(){var u=user();if(!u)return;var h=new Date().getHours(),n=u.name.split(" ")[0];
 $("wg").textContent=(h<12?"Good morning":h<18?"Good afternoon":"Good evening")+", "+n+" \uD83D\uDC4B";
 $("su1").textContent=(n[0]||"G").toUpperCase();$("su2").textContent=u.name;$("tav").textContent=(n[0]||"G").toUpperCase();$("tn").textContent=u.name;$("bn").textContent=S.leads.length;
-var pl0=plan(),P0=pl0&&PLANS[pl0.plan]?PLANS[pl0.plan]:null;
-$("pvb").innerHTML=P0?'<div class="big">'+esc(P0.n)+'</div><p class="sub">Billed '+"monthly at ₦"+P0.m.toLocaleString()+'. '+(pl0.status==="pending"||pl0.status==="paid-unverified"?"We are confirming your payment.":"Active.")+'</p><ul class="chk2">'+P0.f.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ul><div class="row"><a class="btn" href="#/pricing">Change plan</a></div>':'<p class="sub">You have not chosen a plan yet.</p><a class="btn" href="#/pricing">Choose a plan</a>';
+var pl0=eff(),P0=pl0&&PLANS[pl0.plan]?PLANS[pl0.plan]:null;
+$("pvb").innerHTML=P0?'<div class="big">'+esc(P0.n)+'</div><p class="sub">Billed '+"monthly at ₦"+P0.m.toLocaleString()+'. '+(pl0.tester?"Tester access, always on.":pl0.status==="pending"||pl0.status==="paid-unverified"?"We are confirming your payment.":"Active.")+'</p><ul class="chk2">'+P0.f.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+'</ul><div class="row"><a class="btn" href="#/pricing">Change plan</a></div>':'<p class="sub">You have not chosen a plan yet.</p><a class="btn" href="#/pricing">Choose a plan</a>';
 var on=S.groups.filter(function(g){return S.on[g]}).length;
-var pl=plan();$("spp").textContent=pl&&PLANS[pl.plan]?PLANS[pl.plan].n+" plan":"No plan yet";var st=[["Pick your profession",!!S.prof],["Turn on a group",on>0],["Add a keyword",S.kws.length>0],["Run your first scan",Object.keys(S.seen).length>0],["Contact a lead",Object.keys(S.done).some(function(k){return S.done[k]})]];
+var pl=eff();$("spp").textContent=pl&&PLANS[pl.plan]?PLANS[pl.plan].n+" plan":"No plan yet";var st=[["Pick your profession",!!S.prof],["Turn on a group",on>0],["Add a keyword",S.kws.length>0],["Run your first scan",Object.keys(S.seen).length>0],["Contact a lead",Object.keys(S.done).some(function(k){return S.done[k]})]];
 var d=st.filter(function(x){return x[1]}).length,p=Math.round(d/5*100);
 $("ring").style.setProperty("--p",p+"%");$("pc").textContent=p+"%";
 $("chk").innerHTML=st.map(function(x){return"<li class=\""+(x[1]?"ok":"")+"\">"+x[0]+"</li>"}).join("");
@@ -630,9 +646,9 @@ var P=PLANS[w.plan],amt="₦"+P.m.toLocaleString(),u=user()||{};
 $("ckn").textContent=P.n+" plan";$("ckp").innerHTML=amt+"<small> / month</small>";
 $("ckf").innerHTML=P.f.map(function(x){return"<li>"+esc(x)+"</li>"}).join("");
 $("ckb").className="";
-$("ckb").innerHTML='<div class="bk"><div><small>Bank</small><b>FirstBank</b></div><div><small>Account number</small><b id="bkn">3225152974</b><button type="button" class="cp" id="bkc">Copy</button></div><div><small>Account name</small><b>SAMUEL STEPHEN IFEOLUWA</b></div><div><small>Amount to send</small><b>'+amt+'</b></div><div><small>Narration or reference (type this in the transfer)</small><b>'+esc(w.ref)+'</b></div></div><ol class="chk3"><li>Open your bank app and send the amount above.</li><li>Use the reference as the narration.</li><li>Come back here and tap the button below.</li></ol><button class="btn" id="paid">I have made the transfer</button>';
+$("ckb").innerHTML='<div class="bk"><div><small>Bank</small><b>FirstBank</b></div><div><small>Account number</small><b id="bkn">3225152974</b><button type="button" class="cp" id="bkc">Copy</button></div><div><small>Account name</small><b>SAMUEL STEPHEN IFEOLUWA</b></div><div><small>Amount to send</small><b>'+amt+'</b></div><div><small>Narration / remark (type this in the transfer)</small><b id="bkr">'+esc(w.ref)+'</b><button type="button" class="cp" id="bkc2">Copy</button></div></div><ol class="chk3"><li>Open your bank app and send the amount above.</li><li>Put the reference in the narration or remark box.</li><li>Come back here and tap the button below.</li></ol><button class="btn" id="paid">I have made the transfer</button>';
 $("ckn2").textContent="Tapping the button opens WhatsApp with your payment details ready. Press send so we can confirm your payment.";
-$("bkc").onclick=function(){var b=this;try{navigator.clipboard.writeText("3225152974");b.textContent="Copied"}catch(e){b.textContent="3225152974"}};
+$("bkc").onclick=function(){cpy(this,"3225152974")};$("bkc2").onclick=function(){cpy(this,w.ref)};
 $("paid").onclick=function(){var b=this;b.disabled=true;b.textContent="Sending...";
 var d={name:u.name||"",email:u.email||"",plan:P.n,amount:amt,reference:w.ref,bank:"FirstBank 3225152974",time:new Date().toISOString()};
 openWA(d);submitPay(d,P,w,function(ok){if(!ok){b.disabled=false;b.textContent="I have made the transfer";$("ckn2").textContent="Could not send. Check your internet and try again.";return}
@@ -760,13 +776,16 @@ sb.auth.signUp({email:u.email,password:pw,options:{data:{name:u.name,prof:u.prof
 if(r.error){er.textContent=r.error.message;return}
 if(r.data.session){setU(r.data.user);fin(u)}else{$("su").hidden=true;$("sdone").hidden=false;$("sdone").querySelector("h2").textContent="Check your email";$("sdone").querySelector(".sub").textContent="We sent you a link to confirm your account. After confirming, come back and log in.";$("smail").hidden=true}})};
 $("li").onsubmit=function(e){e.preventDefault();var em=$("le").value.trim(),er=$("lerr");er.textContent="";
-if(!SBON){var a=accts()[em.toLowerCase()];if(a){try{localStorage.setItem("gwuser",JSON.stringify(a.user));if(a.plan)localStorage.setItem("gwplan",JSON.stringify(a.plan));else localStorage.removeItem("gwplan")}catch(x){}location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()}else er.textContent="No account found for that email on this device. Sign up first.";return}
+if(!SBON){var a=accts()[em.toLowerCase()];if(!a&&TESTERS.indexOf(em.toLowerCase())>-1){a={user:{name:"Stephen",email:em,prof:"Web designer"},plan:null};saveAcct(a.user,null)}if(a){try{localStorage.setItem("gwuser",JSON.stringify(a.user));if(a.plan)localStorage.setItem("gwplan",JSON.stringify(a.plan));else localStorage.removeItem("gwplan")}catch(x){}toast("Welcome back");location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()}else er.textContent="No account found for that email on this device. Sign up first.";return}
 if(!sb){er.textContent="Still connecting. Try again in a moment.";return}
-sb.auth.signInWithPassword({email:em,password:$("lpw").value}).then(function(r){if(r.error){er.textContent=r.error.message;return}setU(r.data.user);refreshPlan(function(){location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()})})};
+sb.auth.signInWithPassword({email:em,password:$("lpw").value}).then(function(r){if(r.error){er.textContent=r.error.message;return}setU(r.data.user);refreshPlan(function(){toast("Welcome back");location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()})})};
 
 $("mb").onclick=function(){var h=document.querySelector("header.top"),o=h.classList.toggle("open");this.setAttribute("aria-expanded",o)};
 document.addEventListener("click",function(e){var h=document.querySelector("header.top");if(h.classList.contains("open")&&(e.target.closest("#nav a")||!e.target.closest("header.top"))){h.classList.remove("open");$("mb").setAttribute("aria-expanded","false")}});
-function active(){var p=plan();return TEST_MODE?(p||{plan:"pro",billing:"m",status:"active"}):(p&&p.status==="active"?p:null)}
+var TESTERS=["stephenifeoluwa08@gmail.com"];
+function isTester(){var u=user();return !!u&&TESTERS.indexOf(u.email.toLowerCase())>-1}
+function eff(){return isTester()?{plan:"pro",billing:"m",status:"active",tester:true}:plan()}
+function active(){if(isTester())return eff();var p=plan();return TEST_MODE?(p||{plan:"pro",billing:"m",status:"active"}):(p&&p.status==="active"?p:null)}
 function pend(){var p=plan();return p&&p.status==="pending"?p:null}
 function refreshPlan(cb){if(!sb){if(cb)cb();return}
 sb.from("payments").select("plan,amount,reference,status,confirmed_at,created_at").order("created_at",{ascending:false}).limit(10).then(function(r){
@@ -784,7 +803,29 @@ $("pchk").onclick=function(){if(!sb){$("pdn").textContent="We will email you as 
 $("pdn").textContent="Checking...";refreshPlan(function(){if(active()){location.hash="#/app";route()}else{$("pdn").textContent="Not confirmed yet. We will confirm as soon as the money shows in our account.";route()}})};
 function accts(){try{return JSON.parse(localStorage.getItem("gwaccts")||"{}")}catch(e){return{}}}
 function saveAcct(u,pl){var a=accts(),k=u.email.toLowerCase();a[k]={user:u,plan:pl||null};try{localStorage.setItem("gwaccts",JSON.stringify(a))}catch(e){}}
-function leave(){var u=user();if(u&&!SBON)saveAcct(u,plan());try{localStorage.removeItem("gwuser");localStorage.removeItem("gwplan");localStorage.removeItem("gwwant")}catch(e){}}
+function leave(){toast("You have been logged out");var u=user();if(u&&!SBON)saveAcct(u,plan());try{localStorage.removeItem("gwuser");localStorage.removeItem("gwplan");localStorage.removeItem("gwwant")}catch(e){}}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove("on")},2200)}
+var route0=route,_first=true,_t=0,_k=0;
+route=function(){
+if(_first){_first=false;route0();return}
+var m=document.querySelector("main"),v=$("veil"),h=(location.hash||"#/").slice(2)||"home",heavy=document.body.classList.contains("acct")||h.indexOf("app")===0,k=++_k;
+clearTimeout(_t);
+if(heavy){v.classList.add("on");_t=setTimeout(function(){route0();setTimeout(function(){if(k===_k)v.classList.remove("on")},140)},300)}
+else{v.classList.remove("on");m.classList.add("pt");_t=setTimeout(function(){route0();if(k===_k)m.classList.remove("pt")},200)}};
+function cpy(b,t){function ok(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1800)}
+try{navigator.clipboard.writeText(t).then(ok,function(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){b.textContent=t}a.remove()})}catch(e){b.textContent=t}}
+function isOwner(){var u=user();return !!u&&u.email.toLowerCase()===OWNER.toLowerCase()}
+function adDraw(){var L=$("adl");if(!sb){L.innerHTML='<p class="note">The Admin page needs Supabase. Connect it first.</p>';return}
+L.innerHTML='<p class="note">Loading...</p>';
+sb.from("payments").select("*").order("created_at",{ascending:false}).limit(60).then(function(r){
+if(r.error){L.innerHTML='<p class="note">'+esc(r.error.message)+'</p>';return}
+var rows=r.data||[];if(!rows.length){L.innerHTML='<p class="note">No payments yet.</p>';return}
+L.innerHTML=rows.map(function(x){var p=x.status==="pending";return'<div class="ap'+(p?"":" dn")+'"><div><b>'+esc(x.name||"")+'</b> <small>'+esc(x.email||"")+'</small><br>'+esc(x.plan)+' · ₦'+Number(x.amount).toLocaleString()+' · ref <b>'+esc(x.reference)+'</b><br><small>'+new Date(x.created_at).toLocaleString()+'</small></div><div class="ab">'+(p?'<button class="btn" data-cf="'+x.id+'">Confirm</button><button class="btn ghost" data-rj="'+x.id+'">Reject</button>':'<span class="st">'+esc(x.status)+'</span>')+'</div></div>'}).join("")})}
+$("adr").onclick=adDraw;
+document.addEventListener("click",function(e){var b=e.target.closest("[data-cf],[data-rj]");if(!b||!sb)return;var cf=b.hasAttribute("data-cf"),id=b.getAttribute(cf?"data-cf":"data-rj");b.disabled=true;
+sb.from("payments").update(cf?{status:"confirmed",confirmed_at:new Date().toISOString()}:{status:"rejected"}).eq("id",id).select().then(function(r){
+if(r.error||!r.data||!r.data.length){toast("Not allowed. Run the owner SQL first.");b.disabled=false;return}
+toast(cf?"Payment confirmed":"Payment rejected");adDraw()})});
 window.onhashchange=route;route();
 
 </script>
