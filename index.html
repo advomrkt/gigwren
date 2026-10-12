@@ -404,7 +404,7 @@ body.acct[data-view=billing] .v-billing,body.acct[data-view=profile] .v-profile{
 #pfo{font-size:14px!important;gap:7px!important;padding:10px 16px!important}
 @media(max-width:860px){.cst.c4{grid-template-columns:repeat(2,1fr)}}
 :root:root body.adm{--bg:#f3f4f8;--panel:#fff;--ink:#151a2d;--mute:#626b85;--line:#e1e4ee;--accent:#5b3df5;background:#f3f4f8;color:#151a2d}
-body.adm header.top,body.adm .ft{display:none!important}
+body.adm .ft{display:none!important}
 body.adm .wrap{max-width:none;padding:0}
 body.adm #toast{background:#151a2d}
 .ad{min-height:100vh;font-size:14px;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -445,7 +445,20 @@ body.adm #toast{background:#151a2d}
 .adkv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}.adkv div{background:#f3f4f8;border-radius:10px;padding:10px}.adkv span{display:block;font-size:12px;color:var(--mute)}
 .tlr{list-style:none;padding:0;margin:0}.tlr li{padding:8px 0;border-bottom:1px solid var(--line)}.tlr small{display:block;color:var(--mute)}
 @media(max-width:900px){.adk6{grid-template-columns:repeat(2,1fr)}.adg2{grid-template-columns:1fr}.adb{padding:14px}.adh{padding:10px 14px}.adc input,.adc select{min-width:0;flex:1}}
+body.adm header.top{--ink:#f3f1ea;--panel:#0b1120;--line:#1a2744;margin:14px 16px 0}
+.adh{background:transparent;color:var(--ink);padding:18px 22px 0;position:static;gap:12px}
+.adt button{color:#626b85}.adt button.on{background:#151a2d;color:#fff}
+.adr{color:#626b85;margin-left:auto}
+.adk3{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:7px 12px;cursor:pointer;font:inherit}
+.adwarn{background:#fff3d6;border:1px solid #f1d089;color:#6b4a00;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:13px}
+.form input,.form select{width:100%;padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:16px;outline:none;appearance:none;-webkit-appearance:none}
+.form input:focus,.form select:focus{border-color:var(--g2);box-shadow:0 0 0 3px rgba(79,124,255,.25)}
+.form input::placeholder{color:var(--mute)}
+input:-webkit-autofill,input:-webkit-autofill:focus{-webkit-text-fill-color:var(--ink);box-shadow:0 0 0 100px var(--bg) inset;caret-color:var(--ink)}
+@media(max-width:900px){.adh{padding:14px 14px 0}.adr{width:100%;justify-content:space-between}.adt{order:3;width:100%}.addr{padding:16px}.adkv{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.adk6{grid-template-columns:1fr 1fr;gap:8px}.adkp b{font-size:18px}#adme{display:none}.adc input,.adc select{width:100%;flex:1 1 100%}}
 </style>
+
 
 
 
@@ -525,12 +538,12 @@ body.adm #toast{background:#151a2d}
 <section data-page="admin"><div class="ad">
 <header class="adh"><div class="adl"><span class="adtag">ADMIN</span><b>Gigwren Console</b></div>
 <nav class="adt" id="adt"><button data-at="overview" class="on">Overview</button><button data-at="users">Users</button><button data-at="activity">Activity</button><button data-at="payments">Payments</button></nav>
-<div class="adr"><span id="adme"></span><a href="#/" class="adk">View site</a><button class="adk" id="adx">Log out</button></div></header>
-<div class="adb">
+<div class="adr"><span id="adme"></span><button class="adk3" id="adrf">Refresh</button></div></header>
+<div class="adb"><div id="adwn"></div>
 <div data-ap="overview"><div id="adov"></div></div>
 <div data-ap="users" hidden><div class="adc"><input type="text" id="adu" placeholder="Search name, email or profession"></div><div id="adut"></div></div>
 <div data-ap="activity" hidden><div class="adc"><input type="text" id="ads" placeholder="Search email or detail"><select id="adf"><option value="">All actions</option></select></div><div id="adat"></div></div>
-<div data-ap="payments" hidden><div class="adc"><select id="adps"><option value="all">All payments</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="rejected">Rejected</option></select><button class="adk" style="color:#151a2d;border-color:#e1e4ee" id="adrf">Refresh</button></div><div id="adpt"></div></div>
+<div data-ap="payments" hidden><div class="adc"><select id="adps"><option value="all">All payments</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="rejected">Rejected</option></select></div><div id="adpt"></div></div>
 </div><div id="addr" class="addr" hidden></div></div></section>
 <section data-page="signup"><svg class="art" style="top:0;right:-30px;opacity:.12" width="260" viewBox="0 0 200 160" aria-hidden="true"><path d="M20 70Q60 20 110 40Q150 20 170 50L195 44L173 64Q165 112 110 126Q60 136 40 100L4 112Q26 90 20 70Z" fill="#8a3ffc"/><circle cx="140" cy="58" r="5" fill="#fff"/></svg><h2>Create your account</h2><p class="sub">Tell us a little about you. No password needed during early access.</p>
 <form id="su" class="card form"><input type="text" id="sn" placeholder="Your name" required aria-label="Name"><input type="text" id="se" placeholder="Email address" required aria-label="Email"><input type="password" id="spw" placeholder="Password (at least 6 characters)" autocomplete="new-password" aria-label="Password" required><label class="sl">Your profession<select id="sp" aria-label="Profession"></select></label><button class="btn" type="submit">Create account</button></form>
@@ -673,7 +686,7 @@ if(p==="pending"&&!pend()){location.hash="#/pricing";return}
 if(p==="checkout"&&!u){location.hash="#/signup";return}
 if(p==="checkout"&&!want()){location.hash="#/pricing";return}
 document.body.classList.toggle("acct",p==="app"&&!!u);document.body.classList.toggle("adm",p==="admin");if(p==="app"&&u&&!document.body.getAttribute("data-view"))view("overview");document.querySelectorAll("[data-page]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-page")===p)});
-$("nav").innerHTML=u?'<a href="#/">Home</a><a href="#/features">Features</a>'+(isOwner()?'':active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+(isOwner()?'<a href="#/admin">Admin console</a>':'')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
+$("nav").innerHTML=u?'<a href="#/">Home</a>'+(isOwner()?'':'<a href="#/features">Features</a>')+(isOwner()?'':active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+(isOwner()?'<a href="#/admin">Admin console</a>':'')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
 $("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(p==="pending")pd();if(p==="admin")adInit();if(window.acctRender)acctRender();window.scrollTo(0,0)}
 $("sp").innerHTML=Object.keys(PROF).map(function(k){return"<option>"+k+"</option>"}).join("");
 $("su").onsubmit=function(e){e.preventDefault();
@@ -963,9 +976,12 @@ $("adat").innerHTML=adT(AH,AD.act.filter(function(x){return(!fv||x.action===fv)&
 var ps=$("adps").value;
 $("adpt").innerHTML=adT(PH,AD.pay.filter(function(x){return ps==="all"||x.status===ps}).map(payRow))}
 function adLoad(){if(!sb){$("adov").innerHTML='<p class="adn">The admin console needs Supabase. Connect it first.</p>';return}
-Promise.all([sb.from("profiles").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("payments").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("activity").select("*").order("created_at",{ascending:false}).limit(500)]).then(function(r){
-var e=r[0].error||r[1].error||r[2].error;if(e){$("adov").innerHTML='<p class="adn">Could not load data: '+esc(e.message)+'. Run supabase-admin.sql in Supabase first.</p>';return}
-AD.pf=r[0].data||[];AD.pay=r[1].data||[];AD.act=r[2].data||[];adRender()})}
+Promise.all([sb.from("profiles").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("payments").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("activity").select("*").order("created_at",{ascending:false}).limit(500)]).then(function(r){var w=[];
+if(r[0].error){AD.pf=[];w.push("Users: "+r[0].error.message)}else AD.pf=r[0].data||[];
+if(r[1].error){AD.pay=[];w.push("Payments: "+r[1].error.message)}else AD.pay=r[1].data||[];
+if(r[2].error){AD.act=[];w.push("Activity: "+r[2].error.message)}else AD.act=r[2].data||[];
+$("adwn").innerHTML=w.length?'<div class="adwarn"><b>Some data could not load.</b> Run supabase-admin.sql in Supabase, then press Refresh.<br><small>'+w.map(esc).join("<br>")+'</small></div>':"";
+adRender()})}
 function adInit(){$("adme").textContent=(user()||{}).email||"";adLoad();clearInterval(AD.t);AD.t=setInterval(function(){if(!document.hidden&&location.hash==="#/admin")adLoad()},30000)}
 function adUser(id){var p=AD.pf.filter(function(x){return x.id===id})[0],d=$("addr");if(!p){return}d.hidden=false;var pl=planOf(id);
 var pays=AD.pay.filter(function(x){return x.user_id===id});
