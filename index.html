@@ -403,7 +403,50 @@ body.acct[data-view=billing] .v-billing,body.acct[data-view=profile] .v-profile{
 .sl input{margin-top:4px;width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
 #pfo{font-size:14px!important;gap:7px!important;padding:10px 16px!important}
 @media(max-width:860px){.cst.c4{grid-template-columns:repeat(2,1fr)}}
+:root:root body.adm{--bg:#f3f4f8;--panel:#fff;--ink:#151a2d;--mute:#626b85;--line:#e1e4ee;--accent:#5b3df5;background:#f3f4f8;color:#151a2d}
+body.adm header.top,body.adm .ft{display:none!important}
+body.adm .wrap{max-width:none;padding:0}
+body.adm #toast{background:#151a2d}
+.ad{min-height:100vh;font-size:14px;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.adh{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#151a2d;color:#fff;padding:12px 22px;position:sticky;top:0;z-index:20}
+.adl{display:flex;align-items:center;gap:10px;font-size:16px}
+.adtag{background:#ffb020;color:#2b1c00;font-weight:800;font-size:11px;letter-spacing:.12em;padding:3px 8px;border-radius:6px}
+.adt{display:flex;gap:4px;flex:1;overflow-x:auto}
+.adt button{background:transparent;border:0;color:#aab3d4;padding:9px 16px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600;white-space:nowrap}
+.adt button.on{background:#2a3358;color:#fff}
+.adr{display:flex;align-items:center;gap:10px;font-size:13px;color:#aab3d4}
+.adk{background:transparent;border:1px solid #3a4470;color:#e8ecff;border-radius:8px;padding:7px 12px;cursor:pointer;font:inherit;text-decoration:none}
+.adb{padding:22px;max-width:1280px;margin:0 auto}
+.adk6{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px}
+.adkp,.adcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.adkp span{color:var(--mute);font-size:12px}.adkp b{display:block;font-size:22px;margin-top:4px;word-break:break-word}
+.adg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.adcard h3,.addr h3{margin:0 0 10px;font-size:15px}
+.adc{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.adc input,.adc select{padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;min-width:220px}
+.adtw{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+.adtw table{width:100%;border-collapse:collapse;min-width:620px;background:#fff;border-radius:0}
+.adtw th,.adtw td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:13px;color:var(--ink);background:transparent}
+.adtw thead th{background:#f3f4f8;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.adtw td small{display:block;color:var(--mute);font-size:12px}.adtw a{color:#5b3df5;font-weight:600;text-decoration:none}
+.adn{color:var(--mute);padding:14px}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;background:#eceffd;color:#3b36b8;font-size:12px;font-weight:600}
+.s-pending{background:#fff3d6;color:#8a5a00}.s-confirmed{background:#ddf7e8;color:#12703c}.s-rejected{background:#fde2e2;color:#a12626}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:6px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:130px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.bar i{display:block;width:100%;background:linear-gradient(#7c5cff,#5b3df5);border-radius:4px 4px 0 0;min-height:2px}
+.bar span{font-size:10px;color:var(--mute);margin-top:4px}
+.adb1{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:6px;padding:5px 10px;margin-right:6px;cursor:pointer;font:inherit;font-size:12px}
+.adb1.ok{background:#5b3df5;color:#fff;border-color:#5b3df5}
+.addr{position:fixed;top:0;right:0;bottom:0;width:min(480px,100vw);background:#fff;border-left:1px solid var(--line);box-shadow:-20px 0 50px rgba(21,26,45,.2);padding:20px;overflow-y:auto;z-index:50;color:var(--ink)}
+.addr[hidden]{display:none}.addr h2{margin:14px 0 2px}
+.adk2{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit}
+.adkv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}.adkv div{background:#f3f4f8;border-radius:10px;padding:10px}.adkv span{display:block;font-size:12px;color:var(--mute)}
+.tlr{list-style:none;padding:0;margin:0}.tlr li{padding:8px 0;border-bottom:1px solid var(--line)}.tlr small{display:block;color:var(--mute)}
+@media(max-width:900px){.adk6{grid-template-columns:repeat(2,1fr)}.adg2{grid-template-columns:1fr}.adb{padding:14px}.adh{padding:10px 14px}.adc input,.adc select{min-width:0;flex:1}}
 </style>
+
 
 
 
@@ -479,7 +522,16 @@ body.acct[data-view=billing] .v-billing,body.acct[data-view=profile] .v-profile{
 <section data-page="checkout"><h1 class="ph" id="ckt">Checkout</h1><div class="ck"><div class="card"><h2 id="ckn">Plan</h2><div class="big" id="ckp"></div><ul class="chk2" id="ckf"></ul></div>
 <div class="card"><h2>Pay securely</h2><p class="sub">Pay by bank transfer, then tell us you have paid.</p><div class="row" id="ckb"></div><p class="note" id="ckn2"></p></div></div></section>
 <section data-page="pending"><h1 class="ph">Waiting for confirmation</h1><div class="card"><h2>Thank you</h2><p class="sub" id="pdt"></p><div class="row"><button class="btn" id="pchk">Check status</button><a class="btn ghost" id="pwa" target="_blank" rel="noopener" href="https://wa.me/2348119528993">Message us on WhatsApp</a><a class="btn ghost" href="#/">Back to home</a></div><p class="note" id="pdn"></p></div></section>
-<section data-page="admin"><h1 class="ph">Payments</h1><p class="sub">Confirm a payment only after you see the money in your bank app with the same amount and reference.</p><div class="row"><button class="btn ghost" id="adr">Refresh</button></div><div id="adl"></div></section>
+<section data-page="admin"><div class="ad">
+<header class="adh"><div class="adl"><span class="adtag">ADMIN</span><b>Gigwren Console</b></div>
+<nav class="adt" id="adt"><button data-at="overview" class="on">Overview</button><button data-at="users">Users</button><button data-at="activity">Activity</button><button data-at="payments">Payments</button></nav>
+<div class="adr"><span id="adme"></span><a href="#/" class="adk">View site</a><button class="adk" id="adx">Log out</button></div></header>
+<div class="adb">
+<div data-ap="overview"><div id="adov"></div></div>
+<div data-ap="users" hidden><div class="adc"><input type="text" id="adu" placeholder="Search name, email or profession"></div><div id="adut"></div></div>
+<div data-ap="activity" hidden><div class="adc"><input type="text" id="ads" placeholder="Search email or detail"><select id="adf"><option value="">All actions</option></select></div><div id="adat"></div></div>
+<div data-ap="payments" hidden><div class="adc"><select id="adps"><option value="all">All payments</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="rejected">Rejected</option></select><button class="adk" style="color:#151a2d;border-color:#e1e4ee" id="adrf">Refresh</button></div><div id="adpt"></div></div>
+</div><div id="addr" class="addr" hidden></div></div></section>
 <section data-page="signup"><svg class="art" style="top:0;right:-30px;opacity:.12" width="260" viewBox="0 0 200 160" aria-hidden="true"><path d="M20 70Q60 20 110 40Q150 20 170 50L195 44L173 64Q165 112 110 126Q60 136 40 100L4 112Q26 90 20 70Z" fill="#8a3ffc"/><circle cx="140" cy="58" r="5" fill="#fff"/></svg><h2>Create your account</h2><p class="sub">Tell us a little about you. No password needed during early access.</p>
 <form id="su" class="card form"><input type="text" id="sn" placeholder="Your name" required aria-label="Name"><input type="text" id="se" placeholder="Email address" required aria-label="Email"><input type="password" id="spw" placeholder="Password (at least 6 characters)" autocomplete="new-password" aria-label="Password" required><label class="sl">Your profession<select id="sp" aria-label="Profession"></select></label><button class="btn" type="submit">Create account</button></form>
 <p class="note" id="serr" style="color:#ff8aa0"></p><div id="sdone" class="card" hidden><h2>You're in</h2><p class="sub">Your account is saved on this device. Send us your details so we can add you to the early access list.</p><div class="row"><a class="btn" id="smail" href="#" target="_blank" rel="noopener">Send my details on WhatsApp</a><a class="btn ghost" id="sgo" href="#/pricing">Choose a plan</a></div></div><div class="g3" style="margin-top:26px"><div class="fc"><h3>Save your setup</h3><p class="sub">Your groups and keywords are kept for next time.</p></div><div class="fc"><h3>Higher limits</h3><p class="sub">Pick the plan that fits how many groups you watch.</p></div><div class="fc"><h3>Early access price</h3><p class="sub">Early members get a discount for life when plans go live.</p></div></div></section>
@@ -610,6 +662,8 @@ function route(){
 var p=(location.hash||"#/").slice(2)||"home",u=user();
 if(["home","features","pricing","checkout","pending","admin","signup","login","app"].indexOf(p)<0)p="home";
 
+if(isOwner()&&(p==="app"||p==="checkout"||p==="pending")){location.hash="#/admin";return}
+if(p==="home"&&isOwner()&&!window._adm1){window._adm1=1;location.hash="#/admin";return}
 if(p==="app"&&!u){location.hash="#/signup";return}
 if(p==="app"&&!active()){if(pend()){location.hash="#/pending";return}window._gate="Choose a plan to open your dashboard.";location.hash="#/pricing";return}
 if(p==="admin"&&!isOwner()){location.hash="#/";return}
@@ -618,9 +672,9 @@ if(p==="pending"&&active()){location.hash="#/app";return}
 if(p==="pending"&&!pend()){location.hash="#/pricing";return}
 if(p==="checkout"&&!u){location.hash="#/signup";return}
 if(p==="checkout"&&!want()){location.hash="#/pricing";return}
-document.body.classList.toggle("acct",p==="app"&&!!u);if(p==="app"&&u&&!document.body.getAttribute("data-view"))view("overview");document.querySelectorAll("[data-page]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-page")===p)});
-$("nav").innerHTML=u?'<a href="#/">Home</a><a href="#/features">Features</a>'+(active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+(isOwner()?'<a href="#/admin">Admin</a>':'')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
-$("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(p==="pending")pd();if(p==="admin")adDraw();if(window.acctRender)acctRender();window.scrollTo(0,0)}
+document.body.classList.toggle("acct",p==="app"&&!!u);document.body.classList.toggle("adm",p==="admin");if(p==="app"&&u&&!document.body.getAttribute("data-view"))view("overview");document.querySelectorAll("[data-page]").forEach(function(e){e.classList.toggle("on",e.getAttribute("data-page")===p)});
+$("nav").innerHTML=u?'<a href="#/">Home</a><a href="#/features">Features</a>'+(isOwner()?'':active()?'<a class="navi" href="#/app"><i data-i="dash"></i>Dashboard</a>':pend()?'<a class="navi" href="#/pending"><i data-i="plan"></i>Payment pending</a>':'<a class="navi" href="#/pricing"><i data-i="plan"></i>Choose a plan</a>')+(isOwner()?'<a href="#/admin">Admin console</a>':'')+'<a class="navi pill out" href="#/" id="out"><i data-i="out"></i>Log out</a>':'<a href="#/">Home</a><a href="#/features">Features</a><a href="#/pricing">Pricing</a><a class="navi pill" href="#/login"><i data-i="in"></i>Log in</a><a class="btn navi" href="#/signup"><i data-i="up"></i>Sign up</a>';if(window.IC)document.querySelectorAll("#nav [data-i]").forEach(function(e){e.innerHTML=IC[e.getAttribute("data-i")]||""});document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#/"+(p==="home"?"":p))});var o=$("out");if(o)o.onclick=function(){leave();setTimeout(route,0)};
+$("gb").innerHTML=u?"Signed in as <b>"+esc(u.name)+"</b>. Your setup is saved on this device.":"You are using Gigwren as a guest: up to 3 groups and 5 keywords. <a href=\"#/signup\">Create a free account</a> to unlock more or <a href=\"#/login\">log in</a>.";if(p==="pricing"){$("pgate").textContent=window._gate||"";window._gate=""}if(p==="checkout")ck();if(p==="pending")pd();if(p==="admin")adInit();if(window.acctRender)acctRender();window.scrollTo(0,0)}
 $("sp").innerHTML=Object.keys(PROF).map(function(k){return"<option>"+k+"</option>"}).join("");
 $("su").onsubmit=function(e){e.preventDefault();
 var u={name:$("sn").value.trim(),email:$("se").value.trim(),prof:$("sp").value};
@@ -777,12 +831,12 @@ var SUPABASE_URL="https://lkxvpwidvssioebkafld.supabase.co";
 var SUPABASE_ANON_KEY="sb_publishable_PFAPmnJGNlzVz_RZP4xguQ_268CYlQw";
 var SBON=!!(SUPABASE_URL&&SUPABASE_ANON_KEY),sb=null;
 function setU(x){var m=x.user_metadata||{},u={name:m.name||x.email.split("@")[0],email:x.email,prof:PROF[m.prof]?m.prof:"Web designer"};try{localStorage.setItem("gwuser",JSON.stringify(u))}catch(e){}return u}
-function fin(u){var P=PROF[u.prof]||PROF["Web designer"];S.prof=u.prof;P.k.forEach(function(k){if(S.kws.indexOf(k)<0)S.kws.push(k)});P.g.forEach(addGroup);all();
+function fin(u){track("signup",u.prof);var P=PROF[u.prof]||PROF["Web designer"];S.prof=u.prof;P.k.forEach(function(k){if(S.kws.indexOf(k)<0)S.kws.push(k)});P.g.forEach(addGroup);all();
 $("smail").href="mailto:"+OWNER+"?subject="+encodeURIComponent("Gigwren signup")+"&body="+encodeURIComponent("Name: "+u.name+"\nEmail: "+u.email+"\nProfession: "+u.prof);
 if(want()){$("sgo").textContent="Continue to checkout";$("sgo").setAttribute("href","#/checkout")}$("su").hidden=true;$("sdone").hidden=false;route()}
 if(!SBON){$("spw").hidden=true;$("lpw").hidden=true;$("spw").required=false;$("lpw").required=false}
 else{$("smail").hidden=true;var sc=document.createElement("script");sc.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js";
-sc.onload=function(){sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);sb.auth.getSession().then(function(r){var ss=r.data&&r.data.session;if(ss){setU(ss.user);refreshPlan(route)}else{try{localStorage.removeItem("gwuser")}catch(e){}route()}})};document.head.appendChild(sc);
+sc.onload=function(){sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);sb.auth.getSession().then(function(r){var ss=r.data&&r.data.session;if(ss){setU(ss.user);touch(ss.user);refreshPlan(route)}else{try{localStorage.removeItem("gwuser")}catch(e){}route()}})};document.head.appendChild(sc);
 document.addEventListener("click",function(e){if(sb&&e.target.closest("#out,#lo,#lo2"))sb.auth.signOut()})}
 $("su").onsubmit=function(e){e.preventDefault();var u={name:$("sn").value.trim(),email:$("se").value.trim(),prof:$("sp").value},er=$("serr");er.textContent="";
 if(!SBON){if(accts()[u.email.toLowerCase()]){er.textContent="This email already has an account. Please log in.";return}try{localStorage.setItem("gwuser",JSON.stringify(u))}catch(x){}saveAcct(u,null);fin(u);return}
@@ -792,9 +846,9 @@ sb.auth.signUp({email:u.email,password:pw,options:{data:{name:u.name,prof:u.prof
 if(r.error){er.textContent=r.error.message;return}
 if(r.data.session){setU(r.data.user);fin(u)}else{$("su").hidden=true;$("sdone").hidden=false;$("sdone").querySelector("h2").textContent="Check your email";$("sdone").querySelector(".sub").textContent="We sent you a link to confirm your account. After confirming, come back and log in.";$("smail").hidden=true}})};
 $("li").onsubmit=function(e){e.preventDefault();var em=$("le").value.trim(),er=$("lerr");er.textContent="";
-if(!SBON){var a=accts()[em.toLowerCase()];if(!a&&TESTERS.indexOf(em.toLowerCase())>-1){a={user:{name:"Stephen",email:em,prof:"Web designer"},plan:null};saveAcct(a.user,null)}if(a){try{localStorage.setItem("gwuser",JSON.stringify(a.user));if(a.plan)localStorage.setItem("gwplan",JSON.stringify(a.plan));else localStorage.removeItem("gwplan")}catch(x){}toast("Welcome back");location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()}else er.textContent="No account found for that email on this device. Sign up first.";return}
+if(!SBON){var a=accts()[em.toLowerCase()];if(!a&&TESTERS.indexOf(em.toLowerCase())>-1){a={user:{name:"Stephen",email:em,prof:"Web designer"},plan:null};saveAcct(a.user,null)}if(a){try{localStorage.setItem("gwuser",JSON.stringify(a.user));if(a.plan)localStorage.setItem("gwplan",JSON.stringify(a.plan));else localStorage.removeItem("gwplan")}catch(x){}toast("Welcome back");track("login");location.hash=isOwner()?"#/admin":active()?"#/app":(pend()?"#/pending":"#/pricing");route()}else er.textContent="No account found for that email on this device. Sign up first.";return}
 if(!sb){er.textContent="Still connecting. Try again in a moment.";return}
-sb.auth.signInWithPassword({email:em,password:$("lpw").value}).then(function(r){if(r.error){er.textContent=r.error.message;return}setU(r.data.user);refreshPlan(function(){toast("Welcome back");location.hash=active()?"#/app":(pend()?"#/pending":"#/pricing");route()})})};
+sb.auth.signInWithPassword({email:em,password:$("lpw").value}).then(function(r){if(r.error){er.textContent=r.error.message;return}setU(r.data.user);touch(r.data.user);refreshPlan(function(){toast("Welcome back");track("login");location.hash=isOwner()?"#/admin":active()?"#/app":(pend()?"#/pending":"#/pricing");route()})})};
 
 $("mb").onclick=function(){var h=document.querySelector("header.top"),o=h.classList.toggle("open");this.setAttribute("aria-expanded",o)};
 document.addEventListener("click",function(e){var h=document.querySelector("header.top");if(h.classList.contains("open")&&(e.target.closest("#nav a")||!e.target.closest("header.top"))){h.classList.remove("open");$("mb").setAttribute("aria-expanded","false")}});
@@ -819,29 +873,18 @@ $("pchk").onclick=function(){if(!sb){$("pdn").textContent="We will email you as 
 $("pdn").textContent="Checking...";refreshPlan(function(){if(active()){location.hash="#/app";route()}else{$("pdn").textContent="Not confirmed yet. We will confirm as soon as the money shows in our account.";route()}})};
 function accts(){try{return JSON.parse(localStorage.getItem("gwaccts")||"{}")}catch(e){return{}}}
 function saveAcct(u,pl){var a=accts(),k=u.email.toLowerCase();a[k]={user:u,plan:pl||null};try{localStorage.setItem("gwaccts",JSON.stringify(a))}catch(e){}}
-function leave(){toast("You have been logged out");var u=user();if(u&&!SBON)saveAcct(u,plan());try{localStorage.removeItem("gwuser");localStorage.removeItem("gwplan");localStorage.removeItem("gwwant")}catch(e){}}
+function leave(){toast("You have been logged out");track("logout");var u=user();if(u&&!SBON)saveAcct(u,plan());try{localStorage.removeItem("gwuser");localStorage.removeItem("gwplan");localStorage.removeItem("gwwant")}catch(e){}}
 function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove("on")},2200)}
 var route0=route,_first=true,_t=0,_k=0;
 route=function(){
 if(_first){_first=false;route0();return}
-var m=document.querySelector("main"),v=$("veil"),h=(location.hash||"#/").slice(2)||"home",heavy=document.body.classList.contains("acct")||h.indexOf("app")===0,k=++_k;
+var m=document.querySelector("main"),v=$("veil"),h=(location.hash||"#/").slice(2)||"home",heavy=document.body.classList.contains("acct")||document.body.classList.contains("adm")||h==="admin"||h.indexOf("app")===0,k=++_k;
 clearTimeout(_t);
 if(heavy){v.classList.add("on");_t=setTimeout(function(){route0();setTimeout(function(){if(k===_k)v.classList.remove("on")},140)},300)}
 else{v.classList.remove("on");m.classList.add("pt");_t=setTimeout(function(){route0();if(k===_k)m.classList.remove("pt")},200)}};
 function cpy(b,t){function ok(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1800)}
 try{navigator.clipboard.writeText(t).then(ok,function(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){b.textContent=t}a.remove()})}catch(e){b.textContent=t}}
 function isOwner(){var u=user();return !!u&&u.email.toLowerCase()===OWNER.toLowerCase()}
-function adDraw(){var L=$("adl");if(!sb){L.innerHTML='<p class="note">The Admin page needs Supabase. Connect it first.</p>';return}
-L.innerHTML='<p class="note">Loading...</p>';
-sb.from("payments").select("*").order("created_at",{ascending:false}).limit(60).then(function(r){
-if(r.error){L.innerHTML='<p class="note">'+esc(r.error.message)+'</p>';return}
-var rows=r.data||[];if(!rows.length){L.innerHTML='<p class="note">No payments yet.</p>';return}
-L.innerHTML=rows.map(function(x){var p=x.status==="pending";return'<div class="ap'+(p?"":" dn")+'"><div><b>'+esc(x.name||"")+'</b> <small>'+esc(x.email||"")+'</small><br>'+esc(x.plan)+' · '+(x.currency==='USD'?'$':'₦')+Number(x.amount).toLocaleString()+' ('+esc(x.method||'transfer')+') · ref <b>'+esc(x.reference)+'</b><br><small>'+new Date(x.created_at).toLocaleString()+'</small></div><div class="ab">'+(p?'<button class="btn" data-cf="'+x.id+'">Confirm</button><button class="btn ghost" data-rj="'+x.id+'">Reject</button>':'<span class="st">'+esc(x.status)+'</span>')+'</div></div>'}).join("")})}
-$("adr").onclick=adDraw;
-document.addEventListener("click",function(e){var b=e.target.closest("[data-cf],[data-rj]");if(!b||!sb)return;var cf=b.hasAttribute("data-cf"),id=b.getAttribute(cf?"data-cf":"data-rj");b.disabled=true;
-sb.from("payments").update(cf?{status:"confirmed",confirmed_at:new Date().toISOString()}:{status:"rejected"}).eq("id",id).select().then(function(r){
-if(r.error||!r.data||!r.data.length){toast("Not allowed. Run the owner SQL first.");b.disabled=false;return}
-toast(cf?"Payment confirmed":"Payment rejected");adDraw()})});
 var PAYSTACK_PUBLIC_KEY="";
 var USD={plus:3,pro:7,dfy:15};
 function cardOK(){return SBON&&!!PAYSTACK_PUBLIC_KEY}
@@ -888,6 +931,63 @@ $("pfpb").onclick=function(){var pw=$("pfpi").value;if(pw.length<6){$("pfm").tex
 sb.auth.updateUser({password:pw}).then(function(r){$("pfm").textContent=r.error?r.error.message:"Password changed.";if(!r.error)$("pfpi").value=""})};
 $("pfo").onclick=lout;
 var view0=view;view=function(v){view0(v);if(v==="billing")billDraw();if(v==="profile")profDraw()};
+var AD={pf:[],pay:[],act:[],tab:"overview",t:0},_tl={};
+function track(a,d){var u=user();if(!sb||!u||isOwner())return;var k=a+"|"+(d||""),n=Date.now();if(_tl[k]&&n-_tl[k]<3000)return;_tl[k]=n;sb.from("activity").insert({email:u.email,action:a,detail:d||""}).then(function(){})}
+function touch(x){if(!sb||!x)return;window._su=x;var m=x.user_metadata||{};sb.from("profiles").upsert({id:x.id,email:x.email,name:m.name||x.email.split("@")[0],prof:m.prof||"",last_seen:new Date().toISOString()}).then(function(){})}
+setInterval(function(){if(!document.hidden&&window._su)touch(window._su)},120000);
+function dk(d){return new Date(d).toISOString().slice(0,10)}
+function ago(d){if(!d)return"never";var s=(Date.now()-new Date(d))/1000;return s<60?"just now":s<3600?Math.floor(s/60)+"m ago":s<86400?Math.floor(s/3600)+"h ago":Math.floor(s/86400)+"d ago"}
+function planOf(id){var a=null,p=null;AD.pay.forEach(function(x){if(x.user_id!==id)return;if(x.status==="confirmed"&&x.confirmed_at&&Date.now()-new Date(x.confirmed_at)<31*864e5&&!a)a=x;if(x.status==="pending"&&!p)p=x});return a?{s:"Active",p:a.plan}:p?{s:"Pending",p:p.plan}:{s:"None",p:""}}
+function bars(items){var days=[],c={},i;for(i=13;i>=0;i--){var k=dk(Date.now()-i*864e5);days.push(k);c[k]=0}
+items.forEach(function(x){var k=dk(x.created_at);if(k in c)c[k]++});var mx=Math.max.apply(null,days.map(function(d){return c[d]}).concat([1]));
+return'<div class="bars">'+days.map(function(d){return'<div class="bar" title="'+d+': '+c[d]+'"><i style="height:'+(c[d]/mx*100)+'%"></i><span>'+d.slice(8)+'</span></div>'}).join("")+'</div>'}
+function adT(h,rows){return'<div class="adtw"><table><thead><tr>'+h.map(function(x){return'<th>'+x+'</th>'}).join("")+'</tr></thead><tbody>'+(rows.length?rows.join(""):'<tr><td colspan="'+h.length+'" class="adn">Nothing here yet.</td></tr>')+'</tbody></table></div>'}
+function pb(x){return x.status==="pending"?'<button class="adb1 ok" data-cf="'+x.id+'">Confirm</button><button class="adb1" data-rj="'+x.id+'">Reject</button>':x.status==="confirmed"?'<button class="adb1" data-rj="'+x.id+'">Revoke</button>':""}
+function payRow(x){return'<tr><td>'+new Date(x.created_at).toLocaleString()+'</td><td><a href="#" data-u="'+x.user_id+'">'+esc(x.name||x.email||"")+'</a><small>'+esc(x.email||"")+'</small></td><td>'+esc(x.plan)+'</td><td>'+money(x.currency,x.amount)+'<small>'+esc(x.method||"transfer")+'</small></td><td><b>'+esc(x.reference)+'</b></td><td><span class="pill s-'+esc(x.status)+'">'+esc(x.status)+'</span></td><td>'+pb(x)+'</td></tr>'}
+function actRow(x){return'<tr><td>'+ago(x.created_at)+'</td><td><a href="#" data-u="'+x.user_id+'">'+esc(x.email||"")+'</a></td><td><span class="pill">'+esc(x.action)+'</span></td><td>'+esc(x.detail||"")+'</td></tr>'}
+var PH=["When","User","Plan","Amount","Reference","Status",""],AH=["When","User","Action","Detail"];
+function adRender(){var now=Date.now(),on=0,nw=0,ac=0,cnt={};
+AD.act.forEach(function(x){cnt[x.user_id]=(cnt[x.user_id]||0)+1});
+AD.pf.forEach(function(p){if(p.last_seen&&now-new Date(p.last_seen)<6e5)on++;if(now-new Date(p.created_at)<6048e5)nw++;if(planOf(p.id).s==="Active")ac++});
+var pen=AD.pay.filter(function(x){return x.status==="pending"}),rev={NGN:0,USD:0};AD.pay.forEach(function(x){if(x.status==="confirmed")rev[x.currency==="USD"?"USD":"NGN"]+=Number(x.amount)});
+var rv=(rev.NGN?money("NGN",rev.NGN):"")+(rev.NGN&&rev.USD?" + ":"")+(rev.USD?money("USD",rev.USD):"")||"₦0";
+var kp=[["Users",AD.pf.length],["New this week",nw],["Online now",on],["Active plans",ac],["Pending payments",pen.length],["Revenue",rv]];
+$("adov").innerHTML='<div class="adk6">'+kp.map(function(k){return'<div class="adkp"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>'}).join("")+'</div><div class="adg2"><div class="adcard"><h3>New users, last 14 days</h3>'+bars(AD.pf)+'</div><div class="adcard"><h3>Activity, last 14 days</h3>'+bars(AD.act)+'</div></div><div class="adg2"><div class="adcard"><h3>Needs your attention</h3>'+adT(PH,pen.slice(0,8).map(payRow))+'</div><div class="adcard"><h3>Latest activity</h3>'+adT(AH,AD.act.slice(0,10).map(actRow))+'</div></div>';
+var q=$("adu").value.toLowerCase();
+$("adut").innerHTML=adT(["User","Profession","Plan","Joined","Last seen","Events"],AD.pf.filter(function(p){return(p.name+" "+p.email+" "+p.prof).toLowerCase().indexOf(q)>-1}).map(function(p){var pl=planOf(p.id),o=p.last_seen&&now-new Date(p.last_seen)<6e5;
+return'<tr><td><a href="#" data-u="'+p.id+'">'+esc(p.name||"")+'</a><small>'+esc(p.email||"")+'</small></td><td>'+esc(p.prof||"-")+'</td><td><span class="pill '+(pl.s==="Active"?"s-confirmed":pl.s==="Pending"?"s-pending":"")+'">'+pl.s+(pl.p?" · "+esc(pl.p):"")+'</span></td><td>'+new Date(p.created_at).toLocaleDateString()+'</td><td>'+(o?'<span class="dot"></span>':"")+ago(p.last_seen)+'</td><td>'+(cnt[p.id]||0)+'</td></tr>'}));
+var f=$("adf"),fv=f.value,acts={};AD.act.forEach(function(x){acts[x.action]=1});
+f.innerHTML='<option value="">All actions</option>'+Object.keys(acts).sort().map(function(a){return'<option>'+esc(a)+'</option>'}).join("");f.value=fv;
+var sq=$("ads").value.toLowerCase();
+$("adat").innerHTML=adT(AH,AD.act.filter(function(x){return(!fv||x.action===fv)&&((x.email||"")+" "+(x.detail||"")).toLowerCase().indexOf(sq)>-1}).slice(0,300).map(actRow));
+var ps=$("adps").value;
+$("adpt").innerHTML=adT(PH,AD.pay.filter(function(x){return ps==="all"||x.status===ps}).map(payRow))}
+function adLoad(){if(!sb){$("adov").innerHTML='<p class="adn">The admin console needs Supabase. Connect it first.</p>';return}
+Promise.all([sb.from("profiles").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("payments").select("*").order("created_at",{ascending:false}).limit(1000),sb.from("activity").select("*").order("created_at",{ascending:false}).limit(500)]).then(function(r){
+var e=r[0].error||r[1].error||r[2].error;if(e){$("adov").innerHTML='<p class="adn">Could not load data: '+esc(e.message)+'. Run supabase-admin.sql in Supabase first.</p>';return}
+AD.pf=r[0].data||[];AD.pay=r[1].data||[];AD.act=r[2].data||[];adRender()})}
+function adInit(){$("adme").textContent=(user()||{}).email||"";adLoad();clearInterval(AD.t);AD.t=setInterval(function(){if(!document.hidden&&location.hash==="#/admin")adLoad()},30000)}
+function adUser(id){var p=AD.pf.filter(function(x){return x.id===id})[0],d=$("addr");if(!p){return}d.hidden=false;var pl=planOf(id);
+var pays=AD.pay.filter(function(x){return x.user_id===id});
+d.innerHTML='<button class="adk2" id="adcx">Close</button><h2>'+esc(p.name||"")+'</h2><p class="adn">'+esc(p.email||"")+'</p><div class="adkv"><div><span>Profession</span><b>'+esc(p.prof||"-")+'</b></div><div><span>Plan</span><b>'+pl.s+(pl.p?" · "+esc(pl.p):"")+'</b></div><div><span>Joined</span><b>'+new Date(p.created_at).toLocaleDateString()+'</b></div><div><span>Last seen</span><b>'+ago(p.last_seen)+'</b></div></div><h3>Payments</h3>'+adT(PH,pays.map(payRow))+'<h3>Activity</h3><p class="adn" id="adua">Loading...</p>';
+sb.from("activity").select("*").eq("user_id",id).order("created_at",{ascending:false}).limit(200).then(function(r){var el=$("adua");if(!el)return;var rows=r.data||[];
+el.outerHTML=rows.length?'<ul class="tlr">'+rows.map(function(x){return'<li><b>'+esc(x.action)+'</b> '+esc(x.detail||"")+'<small>'+new Date(x.created_at).toLocaleString()+'</small></li>'}).join("")+'</ul>':'<p class="adn">No activity yet.</p>'})}
+document.addEventListener("click",function(e){var t=e.target,b;
+if(b=t.closest("[data-at]")){AD.tab=b.getAttribute("data-at");document.querySelectorAll("[data-at]").forEach(function(x){x.classList.toggle("on",x===b)});document.querySelectorAll("[data-ap]").forEach(function(x){x.hidden=x.getAttribute("data-ap")!==AD.tab});return}
+if(b=t.closest("[data-u]")){e.preventDefault();adUser(b.getAttribute("data-u"));return}
+if(t.closest("#adcx")){$("addr").hidden=true;return}
+if(t.closest("#adx")){lout();return}
+if(t.closest("#adrf")){adLoad();return}
+if(b=t.closest("[data-cf],[data-rj]")){if(!sb)return;var cf=b.hasAttribute("data-cf"),id=b.getAttribute(cf?"data-cf":"data-rj");b.disabled=true;
+sb.from("payments").update(cf?{status:"confirmed",confirmed_at:new Date().toISOString()}:{status:"rejected"}).eq("id",id).select().then(function(r){
+if(r.error||!r.data||!r.data.length){toast("Not allowed. Run supabase-admin.sql first.");b.disabled=false;return}
+toast(cf?"Payment confirmed":"Payment updated");adLoad()})}});
+["adu","ads"].forEach(function(i){$(i).oninput=adRender});["adf","adps"].forEach(function(i){$(i).onchange=adRender});
+var view1=view;view=function(v){view1(v);track("view",v)};
+window.addEventListener("hashchange",function(){track("page",(location.hash||"#/").slice(2)||"home")});
+$("scan").addEventListener("click",function(){track("scan","run")});
+document.addEventListener("click",function(e){var t=e.target;if(!t.closest)return;
+if(t.closest("[data-crm]"))track("crm_add");else if(t.closest("[data-mv]"))track("crm_move");else if(t.closest("#oc"))track("outreach_copy");else if(t.closest("#od"))track("outreach_contacted");else if(t.closest("#paid"))track("payment_request","transfer");else if(t.closest("#cardpay"))track("card_payment_start");else if(t.closest("#pfs"))track("profile_update")});
 window.onhashchange=route;route();
 
 </script>
